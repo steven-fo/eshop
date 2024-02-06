@@ -22,4 +22,20 @@ public class ProductRepository {
     public Iterator<Product> findAll() {
         return productData.iterator();
     }
+
+    public Product findById(long id) {
+        Product temp = null;
+        for (Product product : productData) {
+            if (id == Integer.parseInt(product.getProductId())) {
+                temp = product;
+            }
+        }
+        return temp;
+    }
+
+    public void edit(Product currentProduct, Product newProduct) {
+        int index = productData.indexOf(currentProduct);
+        newProduct.setProductId(currentProduct.getProductId());
+        productData.set(index, newProduct);
+    }
 }
