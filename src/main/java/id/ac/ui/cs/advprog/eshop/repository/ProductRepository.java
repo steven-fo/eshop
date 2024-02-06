@@ -38,4 +38,8 @@ public class ProductRepository {
         newProduct.setProductId(currentProduct.getProductId());
         productData.set(index, newProduct);
     }
+
+    public void delete(Product product) {
+        productData.remove(product);
+    }
 }
