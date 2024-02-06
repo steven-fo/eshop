@@ -27,4 +27,19 @@ public class ProductTest {
     void testGetProductQuantity() {
         assertEquals(100, this.product.getProductQuantity());
     }
+
+    @Test
+    void testGetProductIdInvalid() {
+        assertNotEquals("Invalid ID", this.product.getProductId());
+    }
+
+    @Test
+    void testGetProductNameInvalid() {
+        assertNotEquals(null, this.product.getProductName());
+    }
+
+    @Test
+    void testGetProductQuantityInvalid() {
+        assertNotEquals(1, this.product.getProductQuantity());
+    }
 }
