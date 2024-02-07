@@ -41,12 +41,12 @@ public class CreateProductFunctionalTest {
     }
 
     void checkProduct(ChromeDriver driver, String expectedName, int expectedQuantity) {
-        WebElement productNameInCard = driver.findElement(By.xpath("//div[@class='card-body']/h5[@class='card-title']"));
-        String actualProductName = productNameInCard.getText();
+        WebElement productNameElement = driver.findElement(By.xpath("//table[@class='table table-striped table-responsive-md']//tbody//td[1]"));
+        String actualProductName = productNameElement.getText();
         assertEquals(expectedName, actualProductName);
 
-        WebElement productQuantityInCard = driver.findElement(By.xpath("//div[@class='card-body']/p[contains(text(),'Quantity:')]/span"));
-        String actualProductQuantity = productQuantityInCard.getText();
+        WebElement productQuantityElement = driver.findElement(By.xpath("//table[@class='table table-striped table-responsive-md']//tbody//td[2]"));
+        String actualProductQuantity = productQuantityElement.getText();
         assertEquals(String.valueOf(expectedQuantity), actualProductQuantity);
     }
 
@@ -55,7 +55,7 @@ public class CreateProductFunctionalTest {
         driver.get(baseUrl + "/product/list");
         driver.findElement(By.linkText("Create Product")).click();
         fillInputForm(driver, "Sampo Cap Bambang", 100);
-        driver.findElement(By.xpath("//button[text()='Submit']")); // Submit form
+        driver.findElement(By.xpath("//button[text()='Submit']")).click(); // Submit form
         checkProduct(driver, "Sampo Cap Bambang", 100);
         driver.findElement(By.linkText("Delete")).click();
     }
