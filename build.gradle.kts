@@ -11,8 +11,6 @@ sonar {
 		property("sonar.projectKey", "steven-fo_eshop")
 		property("sonar.organization", "steven-fo")
 		property("sonar.host.url", "https://sonarcloud.io")
-		property("sonar.sources", files("src/main/java"))
-		property("sonar.tests", files("src/test/java"))
 	}
 }
 
