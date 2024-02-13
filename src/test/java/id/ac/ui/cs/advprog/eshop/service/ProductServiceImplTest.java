@@ -25,7 +25,7 @@ class ProductServiceImplTest {
     private ProductServiceImpl productService;
 
     @Test
-    public void testCreate() {
+    void testCreate() {
         Product product = new Product();
 
         productService.create(product);
@@ -34,7 +34,7 @@ class ProductServiceImplTest {
     }
 
     @Test
-    public void testFindAll() {
+    void testFindAll() {
         List<Product> products = new ArrayList<>();
         products.add(new Product());
         products.add(new Product());
@@ -47,7 +47,7 @@ class ProductServiceImplTest {
     }
 
     @Test
-    public void testFindById() {
+    void testFindById() {
         long id = 1L;
         Product expectedProduct = new Product();
         when(productRepository.findById(id)).thenReturn(expectedProduct);
@@ -58,7 +58,7 @@ class ProductServiceImplTest {
     }
 
     @Test
-    public void testEdit() {
+    void testEdit() {
         Product currentProduct = new Product();
         Product newProduct = new Product();
 
@@ -68,7 +68,7 @@ class ProductServiceImplTest {
     }
 
     @Test
-    public void testDelete() {
+    void testDelete() {
         Product product = new Product();
 
         productService.delete(product);

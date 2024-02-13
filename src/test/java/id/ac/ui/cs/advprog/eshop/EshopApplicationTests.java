@@ -6,10 +6,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-public class EshopApplicationTests {
+class EshopApplicationTests {
 
 	@Test
-	public void mainMethodRunsWithoutException() {
+	void mainMethodRunsWithoutException() {
 		try {
 			EshopApplication.main(new String[]{});
 		} catch (Exception e) {
