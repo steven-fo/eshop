@@ -28,7 +28,7 @@ class ProductControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testCreateProductPage() throws Exception {
+    void testCreateProductPage() throws Exception {
         mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
 
         mockMvc.perform(get("/product/create"))
@@ -38,7 +38,7 @@ class ProductControllerTest {
     }
 
     @Test
-    public void testCreateProductPost() throws Exception {
+    void testCreateProductPost() throws Exception {
         mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
         Product product = new Product();
         when(productService.create(product)).thenReturn(product);
@@ -52,7 +52,7 @@ class ProductControllerTest {
     }
 
     @Test
-    public void testProductListPage() throws Exception {
+    void testProductListPage() throws Exception {
         mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
         List<Product> productList = new ArrayList<>();
         when(productService.findAll()).thenReturn(productList);
@@ -64,7 +64,7 @@ class ProductControllerTest {
     }
 
     @Test
-    public void testEditProductPage() throws Exception {
+    void testEditProductPage() throws Exception {
         mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
         Product product = new Product();
         product.setProductId("1");
@@ -77,7 +77,7 @@ class ProductControllerTest {
     }
 
     @Test
-    public void testEditProductPut() throws Exception {
+    void testEditProductPut() throws Exception {
         mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
         Product product = new Product();
         product.setProductId("1");
@@ -93,7 +93,7 @@ class ProductControllerTest {
     }
 
     @Test
-    public void testDeleteProduct() throws Exception {
+    void testDeleteProduct() throws Exception {
         mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
         Product product = new Product();
         product.setProductId("1");
