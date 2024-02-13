@@ -13,8 +13,12 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
+    private final ProductService service;
+
     @Autowired
-    private ProductService service;
+    public ProductController(ProductService service) {
+        this.service = service;
+    }
 
     @GetMapping("/create")
     public String createProductPage(Model model) {
@@ -43,14 +47,14 @@ public class ProductController {
         return "editProduct";
     }
 
-    @PostMapping("/edit")
-    public String editProductPost(@ModelAttribute Product product, Model model) {
+    @PutMapping("/edit")
+    public String editProductPut(@ModelAttribute Product product, Model model) {
         Product currentProduct = service.findById(Integer.parseInt(product.getProductId()));
         service.edit(currentProduct, product);
         return "redirect:list";
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public String deleteProduct(@PathVariable("id") String id, Model model) {
         Product product = service.findById(Integer.parseInt(id));
         service.delete(product);
