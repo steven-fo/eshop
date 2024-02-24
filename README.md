@@ -62,15 +62,15 @@ Moreover, the task executed in the jobs section is to run the testing. Additiona
 
 1. Explain what principles you apply to your project! <br>
 Single Responsibility Principle (SRP): moved the CarController class from ProductController.java file to its own java class file and removed the "extends ProductController" because the method used act the same but return a different data. <br>
-Liskov Substitution Principle (LSP): class yang mengimplement interface seperti, CarServiceImpl dan ProductServiceImpl, tidak menimbulkan error walaupun me-refer ke subclass interfacenya. <br>
-Interface Segregation Principle (ISP): interface yang ada seharusnya dipecah per method yang ada dalam interface tersebut. Namun, karena method dalam interface terpakai semua, maka untuk saat ini belum perlu dipecah per method. <br>
-Dependency Inversion Principle (DIP): tidak ada dependency terhadap high-level module. Dependency bergantung pada abstractions atau interface.
+Liskov Substitution Principle (LSP): currently, there are no classes that use the same method and the same return type. So, this project doesn't violate this principle. <br>
+Interface Segregation Principle (ISP): interfaces in this project, such as CarService and ProductService have already implemented this principle. Take note that violation of this principle happens when there is a method that doesn't need to be implemented, but is forced to implement. In this project, all methods in the interface are implemented. <br>
+Dependency Inversion Principle (DIP): all depndency refers to low-level modules or abstractions or interfaces. In this project, specifically in product controller and car controller class, the classes depend on interfaces, like Car Service and Product Service, not the implemented one, like CarServiceImpl and ProductServiceImpl.
 2. Explain the advantage of applying SOLID principles to your project with examples! <br>
 We know that SOLID principles support the idea of maintainable and easy to comprehend code. Therefore, the advantage of applying SOLID principles are maintainable code, flexible code, easy to comprehend code, and increased stability. By using SOLID principles, we develop a cleaner code, easy to maintain, easy to test, flexible, minimal dependency, and obviously adaptable code. <Br>
 3. Explain the disadvantage of not applying SOLID principles to your project with examples! <br>
 The disadvantage will surely be the opposite of the advantage. So, by not applying the SOLID principles, we develop dirty code, difficult to maintain, difficult to test, unstable, many unused dependencies, and low adaptability code.<br>
 <br>
-Sumber referensi: <br>
+References: <br>
 
 ![Baeldung - SOLID Principles](https://www.baeldung.com/solid-principles) <br>
 ![FreeCodeCamp - SOLID Principles](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/)<br>
