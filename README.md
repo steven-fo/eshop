@@ -61,10 +61,17 @@ Moreover, the task executed in the jobs section is to run the testing. Additiona
 <h3>Reflection 1</h3>
 
 1. Explain what principles you apply to your project! <br>
-In this project, I applied the Single Responsibility Principle. Before SOLID, I added Car Controller class inside the Product Controller class java file, which is incorrect. To improve the code, I moved the
-Car Controller class to its own java file, CarController.java. One class has only one responsibility according to SRP definition. <br>
+Single Responsibility Principle (SRP): moved the CarController class from ProductController.java file to its own java class file and removed the "extends ProductController" because the method used act the same but return a different data. <br>
+Liskov Substitution Principle (LSP): class yang mengimplement interface seperti, CarServiceImpl dan ProductServiceImpl, tidak menimbulkan error walaupun me-refer ke subclass interfacenya. <br>
+Interface Segregation Principle (ISP): interface yang ada seharusnya dipecah per method yang ada dalam interface tersebut. Namun, karena method dalam interface terpakai semua, maka untuk saat ini belum perlu dipecah per method. <br>
+Dependency Inversion Principle (DIP): tidak ada dependency terhadap high-level module. Dependency bergantung pada abstractions atau interface.
 2. Explain the advantage of applying SOLID principles to your project with examples! <br>
 We know that SOLID principles support the idea of maintainable and easy to comprehend code. Therefore, the advantage of applying SOLID principles are maintainable code, flexible code, easy to comprehend code, and increased stability. By using SOLID principles, we develop a cleaner code, easy to maintain, easy to test, flexible, minimal dependency, and obviously adaptable code. <Br>
 3. Explain the disadvantage of not applying SOLID principles to your project with examples! <br>
 The disadvantage will surely be the opposite of the advantage. So, by not applying the SOLID principles, we develop dirty code, difficult to maintain, difficult to test, unstable, many unused dependencies, and low adaptability code.<br>
+<br>
+Sumber referensi: <br>
+
+![Baeldung - SOLID Principles](https://www.baeldung.com/solid-principles) <br>
+![FreeCodeCamp - SOLID Principles](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/)<br>
 </details>
