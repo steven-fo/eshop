@@ -84,4 +84,38 @@ class PaymentServiceImplTest {
         assertEquals(PaymentStatus.SUCCESS.getValue(), result.getStatus());
         assertEquals(OrderStatus.SUCCESS.getValue(), order.getStatus());
     }
+
+    @Test
+    void testGetPaymentByIdIfIdExist(String paymentId) {
+        Payment payment = payments.get(0);
+        doReturn(payment).when(paymentRepository).findById(payment.getId());
+
+        Payment result = paymentService.getPayment(payment.getId());
+        verify(paymentRepository, times(1)).findById(payment.getId());
+        assertEquals(payment.getId(), result.getId());
+    }
+
+    @Test
+    void testGetPaymentByIdIfIdNotFound(String paymentId) {
+        doReturn(null).when(paymentRepository).findById("zczc");
+        assertNull(paymentService.getPayment("zczc"));
+    }
+
+    @Test
+    void testGetAllPayments() {
+        doReturn(payments).when(paymentRepository).findAll();
+
+        List<Payment> result = paymentService.getAllPayments();
+        verify(paymentRepository, times(1)).findAll();
+        assertEquals(payments, result);
+    }
+
+    @Test
+    void testGetAllPaymentsIfEmpty() {
+        doReturn(new ArrayList<Payment>()).when(paymentRepository).findAll();
+
+        List<Payment> result = paymentService.getAllPayments();
+        verify(paymentRepository, times(1)).findAll();
+        assertEquals(new ArrayList<Payment>(), result);
+    }
 }
