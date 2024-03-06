@@ -46,7 +46,7 @@ class PaymentServiceImplTest {
         products.add(product);
 
         orders = new ArrayList<>();
-        Order order = new Order("13652556-012a-4c07-b546-54eb1396d79b", products, 1708560000L, "Safira Sudrajat");
+        Order order = new Order("123", products, 1708560000L, "Safira Sudrajat");
         orders.add(order);
 
         payments = new ArrayList<>();
