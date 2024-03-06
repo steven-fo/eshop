@@ -75,3 +75,13 @@ References: <br>
 ![Baeldung - SOLID Principles](https://www.baeldung.com/solid-principles) <br>
 ![FreeCodeCamp - SOLID Principles](https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/)<br>
 </details>
+
+<details>
+<summary>Module 4</summary>
+<h3>Reflection 1</h3>
+
+1. this TDD flow is useful enough for you or not. If not, explain things that you need to do next time you make more tests. <br>
+This TDD flow is very useful because I could understand the application requirements more. Moreover, I could also make cleaner code because I knew what I needed.
+2. Now reflect whether your tests have successfully followed F.I.R.S.T. principle or not. If not, explain things that you need to do the next time you create more tests. <br>
+Maybe not. I realized I have used the same code for different testing repeatedly. It surely is a dirty way to code <Br>
+</details>
