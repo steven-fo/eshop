@@ -46,4 +46,13 @@ public class PaymentServiceImpl implements PaymentService {
         }
         return payment;
     }
+
+    @Override
+    public Payment getPayment(String paymentId) {
+        return paymentRepository.findById(paymentId);
+    }
+    @Override
+    public List<Payment> getAllPayments() {
+        return paymentRepository.findAll();
+    }
 }
