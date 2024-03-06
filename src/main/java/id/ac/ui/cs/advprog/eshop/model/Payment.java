@@ -28,4 +28,12 @@ public class Payment {
             throw new IllegalArgumentException();
         }
     }
+
+    public void setPaymentData(Map<String, String> paymentData) {
+        if (paymentData.isEmpty()) {
+            throw new IllegalArgumentException();
+        } else {
+            this.paymentData = paymentData;
+        }
+    }
 }
