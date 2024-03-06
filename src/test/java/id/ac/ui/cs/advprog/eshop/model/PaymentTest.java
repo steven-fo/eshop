@@ -29,7 +29,7 @@ public class PaymentTest {
 
         assertEquals("123", payment.getId());
         assertEquals("VOUCHER", payment.getMethod());
-        assertEquals(1, payment.getPaymentData.size());
+        assertEquals(1, payment.getPaymentData().size());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class PaymentTest {
 
         assertEquals("123", payment.getId());
         assertEquals("COD", payment.getMethod());
-        assertEquals(1, payment.getPaymentData.size());
+        assertEquals(1, payment.getPaymentData().size());
     }
 
     @Test
@@ -60,7 +60,7 @@ public class PaymentTest {
     }
 
     @Test
-    void testSetStatusToRejected() {
+    void testSetInvalidStatus() {
         this.paymentData.put("voucherCode", "ESHOP1234ABC5678");
         Payment payment = new Payment("123", "VOUCHER", this.paymentData);
         payment.setStatus("REJECTED");
