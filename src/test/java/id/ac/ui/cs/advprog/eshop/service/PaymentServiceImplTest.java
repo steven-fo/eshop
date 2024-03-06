@@ -86,7 +86,7 @@ class PaymentServiceImplTest {
     }
 
     @Test
-    void testGetPaymentByIdIfIdExist(String paymentId) {
+    void testGetPaymentByIdIfIdExist() {
         Payment payment = payments.get(0);
         doReturn(payment).when(paymentRepository).findById(payment.getId());
 
@@ -96,7 +96,7 @@ class PaymentServiceImplTest {
     }
 
     @Test
-    void testGetPaymentByIdIfIdNotFound(String paymentId) {
+    void testGetPaymentByIdIfIdNotFound() {
         doReturn(null).when(paymentRepository).findById("zczc");
         assertNull(paymentService.getPayment("zczc"));
     }
