@@ -40,7 +40,7 @@ public class PaymentTest {
 
         assertEquals("123", payment.getId());
         assertEquals("COD", payment.getMethod());
-        assertEquals(1, payment.getPaymentData().size());
+        assertEquals(2, payment.getPaymentData().size());
     }
 
     @Test
